@@ -30,13 +30,6 @@ resource "fortios_firewall_policy" "example_policy" {
   comments = "Allow internal users to access the internet with NAT enabled"
 }
 
-
-provider "fortios" {
-  hostname = "your-fortigate-ip"
-  token    = "your-api-token"
-  insecure = true
-}
-
 resource "fortios_firewall_policy" "block_telnet" {
   name     = "Block_Telnet"
   action   = "deny"
