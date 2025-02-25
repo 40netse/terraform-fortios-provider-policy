@@ -1,9 +1,9 @@
 resource "fortios_firewall_policy" "example_policy" {
-  name        = "Allow_Internal_to_Internet"
-  action      = "accept"
-  status      = "enable"
-  schedule    = "always"
-  nat         = "enable"
+  name     = "Allow_Internal_to_Internet"
+  action   = "accept"
+  status   = "enable"
+  schedule = "always"
+  nat      = "enable"
 
   srcintf {
     name = "port1" # Change to your internal interface
@@ -25,7 +25,7 @@ resource "fortios_firewall_policy" "example_policy" {
     name = "ALL"
   }
 
-  logtraffic = "all"  # Log all traffic
+  logtraffic = "all" # Log all traffic
 
   comments = "Allow internal users to access the internet with NAT enabled"
 }
@@ -63,7 +63,7 @@ resource "fortios_firewall_policy" "block_telnet" {
     name = "TELNET" # Specifically blocking Telnet (port 23)
   }
 
-  logtraffic = "all"  # Log blocked traffic for monitoring
+  logtraffic = "all" # Log blocked traffic for monitoring
 
   comments = "Deny all Telnet traffic from internal to external network"
 }
